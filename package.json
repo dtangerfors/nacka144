@@ -1,0 +1,21 @@
+{
+  "name": "nacka144-theme",
+  "version": "1.0.0",
+  "description": "Custom WP theme for nacka144.se",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:sass": "node-sass sass/main.scss ./style.css -w"
+  },
+  "keywords": [
+    "nacka144",
+    "theme",
+    "wordpress"
+  ],
+  "author": "dtangerfors",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}

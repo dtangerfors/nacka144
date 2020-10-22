@@ -1,0 +1,6 @@
+.comment-section {
+  width: 100%;
+  max-width: 80rem + ($base-size * 2);
+  margin: 0 auto $line-height * 10;
+  padding: ($line-height * 4) $base-size 0;
+}

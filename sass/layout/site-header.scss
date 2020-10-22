@@ -1,0 +1,215 @@
+.site-header {
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    z-index: 5;
+
+    display: grid;
+    place-items: center;
+
+    background-color: $white;
+    box-shadow: $shadow-xl;
+    transition: .5s ease;
+
+    @include respond(phone) {
+        padding: 0 $base-size;
+    }
+
+    &--scrolled {
+        transform: translateY(-($line-height * 3));
+        box-shadow: none;
+
+        @include respond(phone) {
+            transform: translateY(-($line-height * 2));
+        }
+    }
+
+    &__global {
+        display: grid;
+        grid-template-columns: 25rem auto;
+        align-items: center;
+
+        background-color: $white;
+
+        width: 100%;
+        height: $line-height * 3;
+
+        padding: 0 3rem;
+
+        @include respond(phone) {
+            height: $line-height * 2;
+            padding: 0;
+        }
+    }
+
+    &__nav-container {
+        display: grid;
+        grid-template-columns: auto 25rem;
+        align-items: center;
+
+        @include respond(tab-land) {
+            display: none;
+        }
+
+        &.open-menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+
+            width: 100%;
+            max-width: 50rem;
+            height: 100vh;
+
+            overflow-y: scroll;
+            overflow-x: visible;
+            background-color: $white;
+
+            padding: 0 $line-height ($line-height * 2);
+            top: $line-height * 3;
+
+            @include respond(phone) {
+                top: $line-height * 2;
+                padding: 0 $base-size ($line-height * 2);
+            }
+        }
+    }
+
+    &__logo-title {
+        font-family: $title-font;
+        font-size: ($base-size * 1.602);
+        font-weight: 400;
+        color: $B100;
+        text-transform: uppercase;
+    }
+
+    &__logo-link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__nav {
+        display: block;
+
+        .open-menu & {
+            order: 2;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        .open-menu & {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__nav-item {
+        display: inline;
+
+        .open-menu & {
+           width: 100%;
+        }
+    }
+
+    &__nav-link {
+        font-family: $body-font;
+        font-size: 1.4rem;
+        font-weight: 600;
+
+        color: $B300;
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        letter-spacing: .25;
+        line-height: 1;
+
+        display: block;
+
+        padding: 1.5rem;
+        border-radius: 3rem;
+
+        &:hover {
+            color: $B100;
+            background-color: $G300;
+        }
+    }
+
+    &__search {
+
+        width: 100%;
+
+        .open-menu & {
+            order: 1;
+            border-top: 1px solid $G200;
+            padding-top: $base-size;
+        }
+    }
+}
+
+.current-article-header {
+    width: 100%;
+    height: $line-height * 2;
+
+    position: absolute;
+    bottom: -($line-height * 2);
+    padding: 0 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: $white;
+    border-bottom: 1px solid $G200;
+
+    z-index: -1;
+
+    @include respond(phone) {
+        padding: 0 $base-size;
+    }
+
+    &::before {
+        width: calc(100% - 6rem);
+        height: 1px;
+        background-color: $G200;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+
+        @include respond(phone) {
+            width: calc(100% - 3.6rem);
+        }
+    }
+
+    &--visible {
+        display: flex;
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-size: $base-size * .8;
+        color: $B100;
+    }
+
+    &__link {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $B300;
+
+        &::after {
+            content: '\203a';
+            padding-left: .5rem;
+            display: inline-block;
+        }
+    }
+}
+

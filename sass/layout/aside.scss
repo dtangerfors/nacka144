@@ -1,0 +1,14 @@
+.aside-item {
+    display: block;
+    margin-bottom: $line-height * 2;
+
+    &__title {
+        font-family: $title-font;
+        font-size: $base-size * 1.266;
+        line-height: $line-height;
+        color: $B100;
+        border-bottom: 1px solid $G200;
+        padding-bottom: $line-height / 5;
+        margin-bottom: $line-height * 0.8;
+    }
+}

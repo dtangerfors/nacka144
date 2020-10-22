@@ -1,0 +1,110 @@
+
+.hamburger {
+    width: 30px;
+    height: 30px;
+    right: 2rem;
+    top: 50%;
+    padding: 10px;
+    position: absolute;
+    cursor: pointer;
+    box-sizing: content-box;
+    z-index: 10;
+    transform: translateY(-50%);
+
+    @include respond(phone) {
+        right: ($base-size * .55);
+    }
+}
+
+@media only screen and (min-width: 75em) {
+    .hamburger {
+        display: none;
+    }
+}
+
+.hamburger *,
+.hamburger *::before,
+.hamburger *::after {
+    transition: .3s ease;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 30px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $B100;
+}
+
+.hamburger-inner {
+    top: 15px;
+}
+
+.hamburger-inner::before {
+    top: 10px;
+}
+
+.hamburger-inner::after {
+    top: 20px;
+}
+
+/* 
+    TRANSITION SETTINGS 
+*/
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+    transition-timing-function: ease;
+    transition-duration: .2s;
+    transition-property: opacity, top, transform;
+    transition-delay: .2s, .2s, 0s;
+}
+
+.hamburger.is-clicked .hamburger-inner,
+.hamburger.is-clicked .hamburger-inner::before,
+.hamburger.is-clicked .hamburger-inner::after {
+    transition-timing-function: ease;
+    transition-duration: .2s;
+    transition-property: opacity, top, transform;
+    transition-delay: .2s, 0s, .2s;
+}
+
+/* Hamburger Text */
+
+.hamburger--menu .hamburger-inner::after {
+    content: 'MENY';
+    background-color: transparent;
+    top: 16px;
+    font-size: 8px;
+    text-align: center;
+    letter-spacing: 2px;
+    transform: translateX(0);
+    transition-property: opacity, top, transform;
+    transition-delay: .4s, .4s, .4s;
+    color: $B100;
+}
+
+.hamburger--menu.is-clicked .hamburger-inner {
+    top: 25px;
+    transform: rotate(45deg);
+    transition-property: opacity, top, transform;
+    transition-delay: 0s, .2s, .4s;
+}
+
+.hamburger--menu.is-clicked .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition-property: opacity, top, transform;
+    transition-delay: 0s, .2s, .4s;
+}
+
+.hamburger--menu.is-clicked .hamburger-inner::after {
+    transform: translateX(20px);
+    opacity: 0;
+    transition-property: opacity, top, transform;
+    transition-delay: 0s, 0s, 0s;
+}

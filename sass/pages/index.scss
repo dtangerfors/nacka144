@@ -1,0 +1,39 @@
+.site-content {
+    margin-bottom: $line-height * 10;
+    padding: ($line-height * 4) $base-size 0;
+
+    &__section {
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+        max-width: 120rem + ($base-size * 2);
+        margin: 0 auto;
+
+        @include respond(tab-land) {
+            justify-content: center;
+        }
+
+        &--gray {
+            background-color: $G300;
+        }
+    }
+
+    &__main {
+        max-width: 80rem;
+
+        &--centered {
+            margin: 0 auto;
+        }
+    }
+
+    &__aside {
+        display: block;
+        max-width: 30rem;
+
+        .open-menu & {
+            order: 3;
+            max-width: 60rem;
+        }
+    }
+}

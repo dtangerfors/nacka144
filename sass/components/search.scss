@@ -1,0 +1,50 @@
+.searchform {
+    width: 100%;
+    background-color: $G300;
+    border-radius: 3rem;
+    overflow: hidden;
+
+    & div {
+        height: 100%;
+        display: flex;
+    }
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+}
+
+.searchform #s {
+    background-color: transparent;
+    -webkit-appearance: none;
+    border: none;
+    width: 100%;
+    padding-left: 2rem;
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+        background-color: rgb(217, 235, 255);
+    }
+}
+
+#searchsubmit {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    box-sizing: content-box;
+    height: 24px;
+    width: 24px;
+    padding: 10px;
+    padding-right: 20px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $G200;
+    }
+}

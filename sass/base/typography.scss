@@ -1,0 +1,18 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: $base-size;
+    line-height: $line-height;
+    margin-bottom: $line-height;
+    color: $B200;
+}
+
+.inline-link {
+    color: inherit;
+
+    &:hover {
+        color: $B100; 
+    }
+}
